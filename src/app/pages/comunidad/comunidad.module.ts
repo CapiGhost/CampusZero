@@ -4,17 +4,17 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { NosotrosPageRoutingModule } from './nosotros-routing.module';
+import { ComunidadPageRoutingModule } from './comunidad-routing.module';
 
-import { NosotrosPage } from './nosotros.page';
+import { ComunidadPage } from './comunidad.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    NosotrosPageRoutingModule
+    ComunidadPageRoutingModule
   ],
-  declarations: [NosotrosPage]
+  declarations: [ComunidadPage]
 })
-export class NosotrosPageModule {}
+export class ComunidadPageModule {}

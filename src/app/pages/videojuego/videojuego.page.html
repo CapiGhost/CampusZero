@@ -1,0 +1,84 @@
+<ion-header>
+    <ion-toolbar>
+        </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    
+    <div class="titulo-juego-container">
+        <h1 class="titulo-juego titulo-efecto blue">CAMPUS</h1>
+        <h1 class="titulo-juego titulo-efecto purple">ZERO</h1>
+    </div>
+
+    <section class="game-section">
+        <h2 class="section-title">MAPA DEL JUEGO</h2>
+        <div class="mapa-container">
+            </div>
+    </section>
+
+    <div *ngIf="cargando" class="loading-message">
+        Transmitiendo Datos de Unidades desde Firestore...
+    </div>
+
+    <section class="game-section" *ngIf="!cargando">
+        <h2 class="section-title">PERSONAJES</h2>
+
+        <div class="screen-container">
+            <div class="unidades">
+                <div class="unidad" *ngFor="let personaje of personajes">
+
+                    <div class="personaje-imagen-container">
+                        <img 
+                            [src]="personaje.avatar" 
+                            [alt]="personaje.nombre + ' avatar'"
+                            (click)="mostrarImagenAmpliada(personaje.avatar)"
+                        >
+                    </div>
+                    
+                    <div class="unidad-info-contenido">
+                        <strong class="nombre-personaje">{{ personaje.nombre }}</strong>
+
+                        <div class="info-bloques">
+                            
+                            <div class="info-bloque-linea">
+                                <div class="info-item">
+                                    <ion-icon name="person"></ion-icon> <span class="label">Raza:</span> <span class="value">{{ personaje.raza }}</span>
+                                </div>
+                                
+                                <div class="info-item">
+                                    <ion-icon name="hourglass"></ion-icon> <span class="label">Edad:</span> <span class="value">{{ personaje.edad }}</span>
+                                </div>
+                            </div>
+                            
+                            <div class="info-bloque-linea">
+                                <div class="info-item arma-item">
+                                    <ion-icon name="sword"></ion-icon> <span class="label">Arma:</span> <span class="value">{{ personaje.arma }}</span>
+                                </div>
+                            </div>
+                            
+                            </div>
+
+                        <div class="descripcion-container">
+                            <span class="descripcion-label">
+                                <ion-icon name="sparkles"></ion-icon> Descripción:
+                            </span>
+                            <p class="descripcion-text">{{ personaje.descripcion }}</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div *ngIf="!cargando && personajes.length === 0" class="error-message">
+        No se encontraron personajes en la colección de Firebase.
+    </div>
+
+    <div class="image-modal" [class.open]="modalAbierto" (click)="cerrarModal()">
+        <div class="modal-content" (click)="$event.stopPropagation()">
+            <span class="close-button" (click)="cerrarModal()">[CERRAR]</span>
+            <img [src]="imagenSeleccionada" alt="Imagen ampliada del personaje">
+        </div>
+    </div>
+</ion-content>

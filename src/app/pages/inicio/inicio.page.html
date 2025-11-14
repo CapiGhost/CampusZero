@@ -1,17 +1,160 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>inicio</ion-title>
-  </ion-toolbar>
-</ion-header>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Campus Zero - Inicio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&family=Press+Start+2P&family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
 
-<ion-content [fullscreen]="true">
-  <ion-button routerLink="/componentes">
-    Componentes</ion-button>
+  <style>
+    
+    :root {
+      --color-campus-blue: #0088ff;
+      --color-zero-purple: #9c27b0;
+      --bg-dark: #0a051d;
+      --text-light: #e0f7fa;
+      --bg-gradient-end: #070312;
+      --neon-blue-light: #71e0ff;
+      --neon-purple-light: #ffbfff;
+      --neon-green: #39ff14;
+    }
 
-  <ion-button routerLink="/nosotros">
-    Nosotros</ion-button>
+    
+    body {
+      font-family: 'Orbitron', 'Inter', sans-serif;
+      margin: 0;
+      background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+      color: var(--text-light);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+      justify-content: center;
+      padding: 10px;
+      box-sizing: border-box;
+    }
 
-  <ion-button routerLink="/noticias">
-    Noticias</ion-button>
+    /* --- CONTENEDOR PRINCIPAL --- */
+    .screen-container {
+      width: 95%;
+      max-width: 350px;
+      background-color: rgba(10, 10, 20, 0.9);
+      border: 2px solid #00FFFF;
+      box-shadow: 0 0 15px rgba(0, 255, 255, 0.6);
+      padding: 15px;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      border-radius: 8px;
+    }
 
-</ion-content>
+    /* --- TÍTULO PRINCIPAL --- */
+    .titulo-juego-container {
+      text-align: center;
+      font-family: 'Press Start 2P', cursive;
+      line-height: 0.7;
+      transform: scale(0.8);
+      transform-origin: center top;
+      margin-bottom: 0.5rem;
+    }
+    .titulo-juego {
+      font-size: 2.2rem;
+      margin: 0;
+      letter-spacing: 4px;
+    }
+    .titulo-efecto {
+      text-transform: uppercase;
+      font-weight: 900;
+    }
+    .titulo-efecto.blue {
+      background-image: linear-gradient(0deg, #004d9c 30%, #4dd2ff 70%);
+      -webkit-text-fill-color: transparent;
+      -webkit-background-clip: text;
+      text-shadow: 0 0 10px var(--color-campus-blue);
+    }
+    .titulo-efecto.purple {
+      background-image: linear-gradient(0deg, #5e158d 30%, #e1b3f0 70%);
+      -webkit-text-fill-color: transparent;
+      -webkit-background-clip: text;
+      text-shadow: 0 0 10px var(--color-zero-purple);
+    }
+
+    /* --- CONTENIDO PRINCIPAL --- */
+    .contenido {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .bloque {
+      background-color: rgba(0, 0, 0, 0.3);
+      border: 1px solid #00FFFF;
+      border-radius: 6px;
+      padding: 10px;
+      box-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .bloque img {
+      width: 60%;
+      max-width: 280px;
+      border-radius: 6px;
+      margin-bottom: 10px;
+      border: 1px solid rgba(0,255,255,0.5);
+    }
+
+    .bloque p {
+      font-size: 0.85rem;
+      font-family: 'Inter', sans-serif;
+      color: var(--text-light);
+      text-shadow: 0 0 5px #00ffff;
+    }
+
+    
+    .bloque-doble {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+    }
+
+    .bloque-doble img {
+      width: 25%;
+      border-radius: 6px;
+      border: 1px solid rgba(0,255,255,0.5);
+    }
+
+  </style>
+</head>
+<body>
+  <div class="screen-container">
+    <div class="titulo-juego-container">
+      <h1 class="titulo-juego titulo-efecto blue">Campus</h1>
+      <h1 class="titulo-juego titulo-efecto purple">Zero</h1>
+    </div>
+
+    <div class="contenido">
+      <div class="bloque">
+        <img src="assets/img/Poster1.png" alt="Sistema de seguridad biométrica futurista">
+        <p>
+          Bienvenido a <strong>Campus Zero</strong>, un entorno virtual donde la seguridad, el conocimiento y la tecnología convergen.
+        </p>
+      </div>
+
+      <div class="bloque">
+        <p>
+          Explora nuestras misiones, conoce los personajes del sistema y desbloquea nuevas zonas del protocolo de acceso.
+        </p>
+        <div class="bloque-doble">
+          <img src="assets/img/timmy.png" alt="Huella digital en interfaz de seguridad">
+          <img src="assets/img/timmy2.png" alt="Interfaz futurista de misión">
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

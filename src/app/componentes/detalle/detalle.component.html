@@ -1,0 +1,49 @@
+<ion-content class="detalle-page-container">
+ <div *ngIf="cargando" class="loading-state">Cargando detalles del personaje...</div>
+
+  <div *ngIf="!cargando && personaje" class="detail-card">
+    <ion-card>
+<div class="header-section">
+ <img [src]="personaje.avatar" [alt]="personaje.nombre + ' avatar'" class="detail-avatar">
+<ion-card-title class="ion-text-center">{{ personaje.nombre | uppercase }}</ion-card-title>
+<ion-card-subtitle class="ion-text-center">{{ personaje.raza }}</ion-card-subtitle>
+ </div>
+
+ <ion-card-content>
+ <ion-list lines="none">
+<ion-item>
+ <ion-icon name="sword-outline" slot="start"></ion-icon>
+ <ion-label>
+ <h2>Arma Principal</h2>
+ <p>{{ personaje.arma }}</p>
+</ion-label>
+</ion-item>
+
+ <ion-item>
+ <ion-icon name="star-outline" slot="start"></ion-icon>
+ <ion-label>
+
+ <h2>Descripción/Habilidad</h2>
+ <p>{{ personaje.descripcion }}</p>
+</ion-label>
+ </ion-item>
+
+ <ion-item>
+ <ion-icon name="time-outline" slot="start"></ion-icon>
+<ion-label>
+ <h2>Edad</h2>
+ <p>{{ personaje.edad }} años</p>
+ </ion-label>
+</ion-item>
+</ion-list>
+ <ion-button expand="block" fill="outline" color="primary" [routerLink]="['/videojuego']">
+ Volver a la lista
+ </ion-button>
+ </ion-card-content>
+</ion-card>
+</div>
+
+ <div *ngIf="!cargando && !personaje" class="error-state">
+ No se pudo cargar el detalle del personaje ID: {{ idPersonaje }}.
+ </div>
+</ion-content>

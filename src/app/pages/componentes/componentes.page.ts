@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
   standalone: false,
 })
 export class ComponentesPage implements OnInit {
+  alertButtons = ['Action'];
 
   constructor() { }
 

@@ -4,25 +4,32 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'inicio',
+    // Redirige a la página de inicio
+    redirectTo: 'inicio', 
     pathMatch: 'full'
   },
   {
     path: 'inicio',
     loadChildren: () => import('./pages/inicio/inicio.module').then( m => m.InicioPageModule)
   },
+  
   {
-    path: 'componentes',
-    loadChildren: () => import('./pages/componentes/componentes.module').then( m => m.ComponentesPageModule)
+    path: 'videojuego',
+    loadChildren: () => import('./pages/videojuego/videojuego.module').then( m => m.VideojuegoPageModule)
   },
   {
-    path: 'nosotros',
-    loadChildren: () => import('./pages/nosotros/nosotros.module').then( m => m.NosotrosPageModule)
+    path: 'contacto',
+    loadChildren: () => import('./pages/contacto/contacto.module').then( m => m.ContactoPageModule)
   },
   {
-    path: 'noticias',
-    loadChildren: () => import('./pages/noticias/noticias.module').then( m => m.NoticiasPageModule)
+    path: 'comunidad',
+    loadChildren: () => import('./pages/comunidad/comunidad.module').then( m => m.ComunidadPageModule)
   },
+
+  {
+  path: 'detalle/:id', 
+  loadComponent: () => import('../app/componentes/detalle/detalle.component').then(m => m.DetalleComponent)
+}
 ];
 
 @NgModule({

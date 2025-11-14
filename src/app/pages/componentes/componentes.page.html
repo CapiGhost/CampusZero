@@ -1,26 +1,96 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>componentes</ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content [fullscreen]="true">
+<app-header titulo="componentes"></app-header>
+<ion-content>
   <ion-button>Activo</ion-button>
-
   <ion-button [disabled]="true">Inactivo</ion-button>
-
   <ion-button fill="outline">Sin relleno</ion-button>
-
   <ion-button>
-    <ion-icon slot="icon-only" name="home"></ion-icon>
-  </ion-button>
+  <ion-icon slot="icon-only" name="home"></ion-icon>
+</ion-button>
+<ion-button expand="block">Block</ion-button>
+<ion-button expand="full">Full</ion-button>
+<ion-button shape="round">Redondo</ion-button>
+<ion-button color="secondary">Color Secundario</ion-button>
 
-  <ion-button expand="block">Block</ion-button>
+<ion-segment [scrollable]="true" value="heart" color="secondary">
+  <ion-segment-button value="home">
+    <ion-icon name="home"></ion-icon>
+  </ion-segment-button>
+  <ion-segment-button value="heart">
+    <ion-icon name="heart"></ion-icon>
+  </ion-segment-button>
+  <ion-segment-button value="pin">
+    <ion-icon name="pin"></ion-icon>
+  </ion-segment-button>
+  <ion-segment-button value="star">
+    <ion-icon name="star"></ion-icon>
+  </ion-segment-button>
+  <ion-segment-button value="call">
+    <ion-icon name="call"></ion-icon>
+  </ion-segment-button>
+</ion-segment>
 
-  <ion-button expand="full">Full</ion-button>
+<div style="margin: 5%;">
+<ion-range labelPlacement="start" label="Label at the Start"></ion-range>
 
-  <ion-button shape="round">Redondo</ion-button>
+<br />
 
-  <ion-button color="secondary">Color Secundario</ion-button>
-  
+<ion-range labelPlacement="end" label="Label at the End"></ion-range>
+
+<br />
+
+<ion-range labelPlacement="fixed" label="Fixed Width Label"></ion-range>
+
+<br />
+
+<ion-range labelPlacement="stacked" label="Stacked Label"></ion-range>
+</div>
+
+<ion-list>
+  <ion-item>
+    <ion-select label="Default label" placeholder="Favorite Fruit">
+      <ion-select-option value="apple">Apple</ion-select-option>
+      <ion-select-option value="banana">Banana</ion-select-option>
+      <ion-select-option value="orange">Orange</ion-select-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-item>
+    <ion-select label="Fixed label" label-placement="fixed" placeholder="Favorite fruit">
+      <ion-select-option value="apple">Apple</ion-select-option>
+      <ion-select-option value="banana">Banana</ion-select-option>
+      <ion-select-option value="orange">Orange</ion-select-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-item>
+    <ion-select label="Stacked label" label-placement="stacked">
+      <ion-select-option value="apple">Apple</ion-select-option>
+      <ion-select-option value="banana">Banana</ion-select-option>
+      <ion-select-option value="orange">Orange</ion-select-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-item>
+    <ion-select label="Floating label" label-placement="floating">
+      <ion-select-option value="apple">Apple</ion-select-option>
+      <ion-select-option value="banana">Banana</ion-select-option>
+      <ion-select-option value="orange">Orange</ion-select-option>
+    </ion-select>
+  </ion-item>
+</ion-list>
+
+<br>
+<ion-progress-bar type="indeterminate" color="primary"></ion-progress-bar>
+
+<ion-button id="present-alert">Click Me</ion-button>
+<ion-alert
+  trigger="present-alert"
+  header="A Short Title Is Best"
+  subHeader="A Sub Header Is Optional"
+  message="A message should be a short, complete sentence."
+  [buttons]="alertButtons"
+></ion-alert>
+
 </ion-content>
+
+

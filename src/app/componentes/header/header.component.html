@@ -1,0 +1,10 @@
+<nav>
+  <ul>
+    <li *ngFor="let elemento of elementos">
+      <a [routerLink]="elemento.ruta">
+        <i class="material-icons">{{ elemento.icono }}</i>
+        <span>{{ elemento.nombre }}</span>
+      </a>
+    </li>
+  </ul>
+</nav>

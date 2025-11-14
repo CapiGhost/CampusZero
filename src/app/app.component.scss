@@ -1,0 +1,75 @@
+
+$neon-blue: #00ffff;
+$neon-purple: #b300ff;
+$fondo-barra: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+$borde-neon: rgba(0, 255, 255, 0.4);
+$texto-inactivo: rgba(180, 200, 255, 0.55);
+$texto-activo: #00eaff;
+
+ion-tab-bar {
+  --background: #000;
+  background: #{$fondo-barra};
+  border-top: 1px solid #{$borde-neon};
+  box-shadow: 0 0 8px rgba(0, 255, 255, 0.25);
+  padding: 1px 0 3px 0; 
+  font-family: "Press Start 2P", cursive;
+  letter-spacing: 0.4px;
+  display: flex;
+  justify-content: space-evenly; 
+  align-items: center;
+  gap: 2px; 
+
+  ion-tab-button {
+    --color: #{$texto-inactivo};
+    --color-selected: #{$texto-activo};
+    --ripple-color: transparent;
+    background: transparent;
+    transition: all 0.25s ease;
+    flex: 1;
+    margin: 0 1px; 
+
+    ion-icon {
+      font-size: 0.95rem; 
+      filter: drop-shadow(0 0 3px rgba(0, 255, 255, 0.4));
+    }
+
+    ion-label {
+      font-size: 0.43rem; 
+      margin-top: 0;
+      text-transform: uppercase;
+      text-shadow: 0 0 4px rgba(0, 255, 255, 0.4);
+    }
+
+    &.tab-selected,
+    &:hover {
+      ion-icon {
+        filter: drop-shadow(0 0 5px #00ffff);
+      }
+      ion-label {
+        color: #00ffff;
+        text-shadow: 0 0 5px #00ffff;
+      }
+    }
+  }
+
+  
+  animation: pulseBar 3s infinite alternate;
+  @keyframes pulseBar {
+    0% { box-shadow: 0 0 6px rgba(0, 255, 255, 0.15); }
+    100% { box-shadow: 0 0 12px rgba(179, 0, 255, 0.4); }
+  }
+}
+
+ion-header {
+  ion-toolbar {
+    background: #{$fondo-barra};
+    border-bottom: 1px solid #{$borde-neon};
+    --color: #00ffff;
+    font-family: "Press Start 2P", cursive;
+    text-shadow: 0 0 5px #00ffff;
+  }
+}
+
+ion-content {
+  --background: #0a0a14;
+}

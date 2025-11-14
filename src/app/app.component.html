@@ -1,3 +1,16 @@
-<ion-app>
+<ion-tabs>
   <ion-router-outlet></ion-router-outlet>
-</ion-app>
+  
+  <ion-tab-bar slot="bottom">
+    
+    <ion-tab-button 
+      *ngFor="let item of elementos" 
+      [tab]="item.ruta.substring(1)"> 
+      
+      <ion-icon [name]="item.icono"></ion-icon>
+      <ion-label>{{item.nombre}}</ion-label>
+      
+    </ion-tab-button>
+    
+  </ion-tab-bar>
+</ion-tabs>

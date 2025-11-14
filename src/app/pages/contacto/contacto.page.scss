@@ -1,0 +1,83 @@
+// Variables de Color (Las mismas para consistencia)
+$azul-primario: #007bff;          // Azul Brillante para acentos
+$blanco-fondo-principal: #f8f9fa; // Fondo general de la página (Blanco Roto)
+$blanco-tarjeta: #ffffff;         // Blanco Puro para módulos/tarjetas
+$gris-texto: #495057;             // Gris oscuro para texto secundario
+$borde-suave: #dee2e6;            // Borde ligero para tarjetas
+
+// --- Estilos de la Cabecera (ion-header) ---
+
+ion-header {
+  ion-toolbar {
+    // Fondo de la barra superior: Blanco Puro
+    --background: #{$blanco-tarjeta};
+    // Color del texto/título: Azul Primario
+    --color: #{$azul-primario};
+    // Borde inferior sutil para separarla del contenido
+    border-bottom: 1px solid #{$borde-suave};
+  }
+}
+
+// --- Estilos del Contenido Principal (ion-content) ---
+
+ion-content {
+  // Fondo de la página: Blanco Roto
+  --background: #{$blanco-fondo-principal};
+  
+  // padding es opcional, pero ayuda a que el contenido no toque los bordes
+  // --padding-start: 15px;
+  // --padding-end: 15px;
+}
+
+// --- Estilos para Tarjetas/Módulos de Información (Si los usas) ---
+
+ion-card {
+  // Fondo de la tarjeta: Blanco Puro
+  --background: #{$blanco-tarjeta};
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05); // Sombra muy suave para elevarla
+  border-radius: 8px; // Bordes redondeados sutiles
+  margin-bottom: 20px;
+
+  ion-card-header {
+    // Título de la tarjeta en azul
+    ion-card-title {
+      color: #{$azul-primario};
+      font-weight: 600;
+    }
+    // Subtítulo de la tarjeta
+    ion-card-subtitle {
+      color: #{$gris-texto};
+    }
+  }
+  
+  // Color de los botones dentro de las tarjetas (si los hay)
+  ion-button {
+    --background: #{$azul-primario};
+    --background-activated: #0056b3; // Azul más oscuro al presionar
+    --color: #{$blanco-tarjeta}; // Texto blanco en el botón
+  }
+}
+
+// --- Estilos para Listas o Ítems (Si los usas) ---
+
+ion-list {
+  background: transparent; // Para que se vea el fondo de la página
+  
+  ion-item {
+    // Fondo de cada ítem: Blanco Puro
+    --background: #{$blanco-tarjeta};
+    // Color del texto de la lista
+    --color: #212529;
+    border-bottom: 1px solid #{$borde-suave}; // Separador entre ítems
+    
+    // Íconos al inicio del ítem
+    ion-icon {
+      color: #{$azul-primario}; // Íconos en azul
+    }
+    
+    // Ícono de flecha (si usas ion-item detail)
+    &.item-detail {
+      --detail-icon-color: #{$gris-texto};
+    }
+  }
+}

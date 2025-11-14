@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Campus Zero - Contacto</title>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Orbitron:wght@400;700&family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --color-campus-blue: #0088ff;
+      --color-zero-purple: #9c27b0;
+      --neon-blue-light: #71e0ff;
+      --neon-purple-light: #ffbfff;
+      --neon-green: #39ff14;
+    }
+
+    body {
+      font-family: "Orbitron", sans-serif;
+      margin: 0;
+      background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+      color: #e0e0e0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 8px;
+      box-sizing: border-box;
+    }
+
+    .screen-container {
+      width: 92%;
+      max-width: 320px;
+      background-color: rgba(10, 10, 20, 0.85);
+      border: 2px solid #00ffff;
+      box-shadow: 0 0 12px rgba(0, 255, 255, 0.6);
+      padding: 12px;
+      border-radius: 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    /* --- TÍTULO --- */
+    .titulo-juego-container {
+      text-align: center;
+      font-family: "Press Start 2P", cursive;
+      line-height: 0.7;
+      transform: scale(0.7);
+      transform-origin: center top;
+      margin-top: 6px;
+      margin-bottom: 6px;
+    }
+    .titulo-juego {
+      font-size: 1.9rem;
+      margin: 0;
+      letter-spacing: 3px;
+    }
+    .titulo-efecto.blue {
+      background-image: linear-gradient(0deg, #004d9c 30%, #4dd2ff 70%);
+      -webkit-text-fill-color: transparent;
+      -webkit-background-clip: text;
+      text-shadow: 0 0 8px var(--color-campus-blue);
+    }
+    .titulo-efecto.purple {
+      background-image: linear-gradient(0deg, #5e158d 30%, #e1b3f0 70%);
+      -webkit-text-fill-color: transparent;
+      -webkit-background-clip: text;
+      text-shadow: 0 0 8px var(--color-zero-purple);
+    }
+
+    .lema-subtitulo {
+      color: var(--neon-purple-light);
+      font-style: italic;
+      font-size: 0.75em;
+      text-shadow: 0 0 6px var(--color-zero-purple);
+      text-align: center;
+      font-family: "Inter", sans-serif;
+      margin-top: -0.4rem;
+      margin-bottom: 0.8rem;
+    }
+
+    /* --- SECCIONES --- */
+    .section-title {
+      color: #ffd700;
+      font-size: 12px;
+      text-transform: uppercase;
+      border-bottom: 1px dashed #ffd700;
+      padding-bottom: 3px;
+      font-family: "Orbitron", sans-serif;
+      margin-bottom: 5px;
+      text-align: center;
+    }
+
+    /* --- CONTACTOS --- */
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      background-color: rgba(0, 0, 0, 0.4);
+      border: 1px solid rgba(0, 255, 255, 0.3);
+      padding: 4px 6px;
+      border-radius: 6px;
+      box-shadow: 0 0 5px rgba(0, 255, 255, 0.2);
+    }
+
+    .contact-item img {
+      width: 18px;
+      height: 18px;
+      border-radius: 3px;
+    }
+
+    .contact-info strong {
+      font-size: 0.7rem;
+      color: #71e0ff;
+    }
+    .contact-info span {
+      font-size: 0.65rem;
+      color: #cceeff;
+      display: block;
+    }
+
+    /* --- LOGOS SOCIALES --- */
+    .social-logos {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin: 6px 0;
+    }
+    .social-logos img {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      box-shadow: 0 0 6px rgba(255, 255, 255, 0.25);
+      transition: 0.2s;
+    }
+    .social-logos img:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    }
+
+    /* --- FORMULARIO --- */
+    .form-section {
+      background-color: rgba(0, 0, 0, 0.3);
+      border: 1px solid rgba(0, 255, 255, 0.3);
+      border-radius: 6px;
+      padding: 6px;
+      box-shadow: 0 0 6px rgba(0, 255, 255, 0.1);
+    }
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 6px;
+    }
+    .form-group label {
+      font-size: 0.65rem;
+      color: var(--neon-blue-light);
+      margin-bottom: 3px;
+    }
+    .form-group input,
+    .form-group textarea {
+      padding: 5px;
+      border: 1px solid #00ffff;
+      background-color: rgba(0, 0, 0, 0.4);
+      color: #e0e0e0;
+      border-radius: 4px;
+      font-family: "Inter", sans-serif;
+      font-size: 0.7rem;
+      resize: none;
+    }
+    .form-group textarea {
+      height: 55px;
+    }
+
+    .submit-btn {
+      width: 100%;
+      background-color: var(--neon-green);
+      border: none;
+      color: #000;
+      font-weight: 700;
+      font-family: "Orbitron", sans-serif;
+      padding: 6px;
+      border-radius: 6px;
+      cursor: pointer;
+      box-shadow: 0 0 8px var(--neon-green);
+      font-size: 0.75rem;
+      transition: 0.2s;
+    }
+    .submit-btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 14px var(--neon-green);
+    }
+  </style>
+</head>
+<body>
+  <div class="screen-container">
+    <div class="titulo-juego-container">
+      <h1 class="titulo-juego titulo-efecto blue">CONTACTO</h1>
+      <h1 class="titulo-juego titulo-efecto purple"></h1>
+    </div>
+
+    <p class="lema-subtitulo">-- Terminal de Enlace de Contacto --</p>
+
+    <div class="section-title">Canales de Transmisión Cifrada</div>
+
+    <div>  
+      <div class="contact-item">
+        <img src="https://cdn-icons-png.flaticon.com/512/5968/5968852.png" alt="X" />
+        <div class="contact-info">
+          <strong>YOUTUBE:</strong>
+          <span>@campus_zero</span>
+        </div>
+      </div>
+      <div class="contact-item">
+        <img src="https://cdn-icons-png.flaticon.com/512/733/733558.png" alt="Instagram" />
+        <div class="contact-info">
+          <strong>INSTAGRAM:</strong>
+          <span>@campus.zero</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="social-logos">
+      <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram" />
+      <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="YouTube" />
+    </div>
+
+    <div class="section-title">Formulario de Soporte Técnico</div>
+
+    <div class="form-section">
+      <form>
+        <div class="form-group">
+          <label for="nombre">Nombre / ID de Operador:</label>
+          <input type="text" id="nombre" />
+        </div>
+        <div class="form-group">
+          <label for="mensaje">Mensaje / Detalle de la Falla:</label>
+          <textarea id="mensaje"></textarea>
+        </div>
+        <button type="submit" class="submit-btn">ENVIAR ENLACE</button>
+      </form>
+    </div>
+  </div>
+</body>
+</html>
